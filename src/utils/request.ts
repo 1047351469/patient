@@ -3,11 +3,13 @@ import { showToast } from 'vant'
 
 import { useUserStore } from '@/stores'
 import router from '@/router'
+export const baseURL = 'https://consult-api.itheima.net/'
 const instance = axios.create({
   // 1. 基础地址，超时时间
-  baseURL: 'https://consult-api.itheima.net/',
+  baseURL,
   timeout: 10000
 })
+
 
 instance.interceptors.request.use(
   (config) => {
