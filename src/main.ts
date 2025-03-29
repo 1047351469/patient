@@ -6,8 +6,7 @@ import App from './App.vue'
 import router from './router'
 import pinia from './stores'
 import Vant from 'vant';
-import { showToast } from 'vant';
-
+import 'virtual:svg-icons-register'
 import 'vant/es/toast/style';
 const app = createApp(App)
 

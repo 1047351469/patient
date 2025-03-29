@@ -4,7 +4,7 @@ import { showToast } from 'vant'
 import { useUserStore } from '@/stores'
 import router from '@/router'
 const instance = axios.create({
-  // TODO 1. 基础地址，超时时间
+  // 1. 基础地址，超时时间
   baseURL: 'https://consult-api.itheima.net/',
   timeout: 10000
 })
@@ -31,7 +31,7 @@ instance.interceptors.response.use(
       }
     
     
-    return res
+    return res.data
   },
   (err:AxiosError) => {
    

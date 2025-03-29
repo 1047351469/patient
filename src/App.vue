@@ -5,8 +5,11 @@ import type { User } from './types/user'
 import { Button as VanButton } from 'vant'
 import { storeToRefs } from 'pinia';
 import { useUserStore } from '@/stores'
-const { user } = storeToRefs(useUserStore())
-const { setUser, delUser } = useUserStore()
+const store=useUserStore()
+const { user } = storeToRefs(store)
+const { setUser, delUser } = store
+
+
 const getUserInfo = async () => {
   const res = await request('/patient/myUser')
   console.log(res)
@@ -27,14 +30,6 @@ const del = () => {
 </script>
 
 <template>
-  {{ user }}
-  <van-button type="primary" @click="getUserInfo">获取个人信息</van-button>
-  <van-button @click="login">login</van-button>
-  <!-- <button @click="()=>delUser()">退出</button> -->
-  <button @click="del">退出</button>
-  <a href="#">123</a>
-  <div class="container">
-  </div>
   <RouterView />
 </template>
 
