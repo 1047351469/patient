@@ -6,9 +6,14 @@ import { useUserStore } from '@/stores'
 import { showConfirmDialog } from 'vant'
 import { useRouter } from 'vue-router'
 const user = ref<UserInfo>()
+import { request } from '@/utils/request'
 onMounted(async () => {
   const res = await getUserInfo()
   user.value = res.data
+
+//   request(import.meta.env.VITE_APP_CALLBACK +'/patient/message/list').then((res) => {
+//   console.log(res)
+// })
 })
 // 退出
 const store = useUserStore()

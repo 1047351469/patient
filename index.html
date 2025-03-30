@@ -9,5 +9,9 @@
   <body>
     <div id="app"></div>
     <script type="module" src="/src/main.ts"></script>
+    <% if(DEV){ %>
+      <script src="https://cdn.bootcdn.net/ajax/libs/eruda/2.11.3/eruda.min.js"></script>
+      <script>eruda.init()</script>
+      <% } %>
   </body>
 </html>

@@ -8,16 +8,29 @@ import { VantResolver } from 'unplugin-vue-components/resolvers'
 import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
 import path from 'path'
 import { createHtmlPlugin } from 'vite-plugin-html'
-
+import { viteMockServe } from 'vite-plugin-mock'
 
 
 // https://vite.dev/config/
 export default defineConfig({
+  base: './', // 使用相对路径
+  build: {
+    outDir: 'dist'
+  },
+  test: {
+    environment: 'happy-dom'
+  },
+  
   plugins: [
     vue(),
     vueDevTools(),
     createHtmlPlugin(),
-   
+    viteMockServe({
+      // 在哪个文件夹下编写模拟接口的代码
+      mockPath: './src/mock',
+      // 在开发环境开启mock
+      localEnabled: true
+    }),
     // 自动导入的插件，解析器可以是 vant element and-vue 
     Components({
       dts: false,
