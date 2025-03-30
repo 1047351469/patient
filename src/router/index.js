@@ -61,7 +61,29 @@ const router = createRouter({
       path: '/user/consult/:id',
       component: () => import('@/views/User/ConsultDetail.vue'),
       meta: { title: '问诊详情' }
+    },
+    {
+      path: '/order/pay',
+      component: () => import('@/views/Order/OrderPay.vue'),
+      meta: { title: '药品支付' }
+    },
+    {
+      path: '/order/pay/result',
+      component: () => import('@/views/Order/OrderPayResult.vue'),
+      meta: { title: '药品支付结果' }
+    },
+    {
+      path: '/order/:id',
+      component: () => import('@/views/Order/OrderDetail.vue'),
+      meta: { title: '药品订单详情' }
+    },
+    {
+      path: '/order/logistics/:id',
+      component: () => import('@/views/Order/OrderLogistics.vue'),
+      meta: { title: '物流详情' }
     }
+
+
 
 
 
@@ -82,7 +104,7 @@ router.beforeEach((to) => {
   // 否则不做任何处理
 })
 router.afterEach((to) => {
-  document.title = `${to.meta.title || ''}-优医问诊`
+ document.title = `${to.meta.title || ''}-${import.meta.env.VITE_APP_TITLE}`
   NProgress.done()
 })
 
