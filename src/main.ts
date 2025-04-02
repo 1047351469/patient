@@ -1,4 +1,4 @@
-
+import "@/ts/type1.ts"
 import { createApp } from 'vue'
 import 'vant/lib/index.css'
 import "@/styles/main.scss"
