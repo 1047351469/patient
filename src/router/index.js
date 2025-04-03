@@ -81,6 +81,11 @@ const router = createRouter({
       path: '/order/logistics/:id',
       component: () => import('@/views/Order/OrderLogistics.vue'),
       meta: { title: '物流详情' }
+    },
+    {
+      path: '/test',
+      component: () => import('@/views/Test/index.vue'),
+      meta: { title: '测试读写' }
     }
 
 

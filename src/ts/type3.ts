@@ -1,6 +1,12 @@
 import type {Person} from "./type2"
 import type {DeepExpand} from "./method"
+import * as fs from "fs";
 
+const content = "Hello, this is a text file created by TypeScript.";
+
+fs.writeFileSync("example.txt", content, "utf-8");
+
+console.log("example.txt written successfully!");
 // ✅ 用于合并联合类型为一个对象（内建 TS 不自动合并）
 type Merge<T> = {
     [K in keyof T]: T[K];
