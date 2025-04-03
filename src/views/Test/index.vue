@@ -19,6 +19,38 @@ function exportAll() {
     downloadFile(filename, content);
   }
 }
+
+const comments = `
+姓名
+年龄
+邮箱
+`;
+
+function mergeCommentsAboveFields(commentsText, fieldsText) {
+  const comments = commentsText
+    .split('\n')
+    .map(line => line.replace(/^\/\/\s*/, '').trim())
+    .filter(Boolean);
+
+  const fields = fieldsText
+    .split('\n')
+    .map(line => line.trim())
+    .filter(Boolean);
+
+  const merged = comments.map((comment, i) => {
+    const field = fields[i] || '';
+    return `// ${comment}\n${field}`;
+  });
+
+  return merged.join('\n\n');
+}
+console.log( mergeCommentsAboveFields(comments, fields));
+
+const fields = `
+name: string
+age: number
+email: string
+`;
 </script>
 
 <template>
