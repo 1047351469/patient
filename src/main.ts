@@ -1,4 +1,5 @@
-import "@/ts/type1.ts"
+import "@/regex/test1"
+// import "@/regextest1"
 import { createApp } from 'vue'
 import 'vant/lib/index.css'
 import "@/styles/main.scss"
