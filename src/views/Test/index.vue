@@ -54,5 +54,6 @@ email: string
 </script>
 
 <template>
+   <vk-button size="small" loading type="success">我是 VkButton</vk-button>
   <button @click="exportAll">导出所有文件</button>
 </template>

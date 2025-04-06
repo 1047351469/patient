@@ -12,6 +12,8 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
+    "@vikingmute/v-element": "^0.0.4",
+    "@vue/compiler-dom": "^3.5.13",
     "@vueuse/core": "^13.0.0",
     "axios": "^1.8.4",
     "dayjs": "^1.11.13",

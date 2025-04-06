@@ -1,1 +1,4 @@
 shift+alt拉到最后
+去掉空行 ^\s*$\n?
+xml <(?:Age|Gender)>(.*?)</(?:Age|Gender)> alt+enter复制
+
