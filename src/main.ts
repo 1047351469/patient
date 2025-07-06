@@ -14,6 +14,7 @@ import pinia from './stores'
 import Vant from 'vant';
 import 'virtual:svg-icons-register'
 import 'vant/es/toast/style';
+import "./test1.ts"
 const app = createApp(App)
 
 

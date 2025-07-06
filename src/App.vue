@@ -5,7 +5,7 @@ import type { User } from './types/user'
 import { Button as VanButton } from 'vant'
 import { storeToRefs } from 'pinia';
 import { useUserStore } from '@/stores'
-const store=useUserStore()
+const store = useUserStore()
 const { user } = storeToRefs(store)
 const { setUser, delUser } = store
 
@@ -24,9 +24,23 @@ const login = async () => {
   setUser(res.data)
 }
 const del = () => {
-  
+
   delUser()
 }
+async function  test(){
+  const { default: moji } = await import('@/utils/moji.js');
+  
+const text = 'ＡＢＣ　１２３　アイウ　ｱｲｳ';
+const result = moji(text)
+  .convert('ZE', 'HE')  // 全角英数字 → 半角
+  .convert('ZS', 'HS')  // 全角空格 → 半角
+  .convert('ZK', 'HK')  // 全角片假名 → 半角
+  .toString();
+
+console.log(result); // ABC 123 ｱｲｳ ｱｲｳ
+}
+test()
+
 </script>
 
 <template>
